@@ -106,7 +106,7 @@ aside ul li {
 /*gallery*/
 .gallery {
     background-color: #a0aca1; /* Background color for the gallery */
-    padding: 20px; /* Padding around the gallery content */
+    padding: 30px; /* Padding around the gallery content */
     border-radius: 15px; /* Rounded corners for the gallery container */
 }
 
@@ -120,16 +120,19 @@ aside ul li {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Smaller gap for more compact layout */
+    gap: 30px; /* Smaller gap for more compact layout */
     margin-top: 20px; /* Space above the grid */
 }
 
 .gallery-item {
+    display: flex;
+    align-items: center;
     position: relative; /* For image overlay effects */
     overflow: hidden; 
     border-radius: 15px; 
     transition: transform 0.3s; 
     height: 300px; 
+    margin: 0;
 }
 
 .gallery-item:hover {
@@ -137,11 +140,12 @@ aside ul li {
 }
 
 .gallery-item img {
-    width: 100%; 
+    width: 150px; 
     height: 100%; 
     display: block; 
     object-fit: cover; 
     border-radius: 15px; 
+    margin-right: 20px;
 }
 
 .gallery-item::after {
@@ -160,6 +164,9 @@ aside ul li {
     opacity: 1;
 }
 
+.gallery-text {
+    flex: 1; /* Laske tekstikastil võtta ülejäänud ruum */
+}
 
 
 /*footer*/
