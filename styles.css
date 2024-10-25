@@ -1,12 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    color:#333
+    color:#E1D89F;
+    background-color: #374045;
+}
+
+.header, footer, aside, .gallery {
+    background-color: inherit;
 }
 
 h1, h2, h3 {
-    color: #2d5044; 
+    color: #D89216; 
 }
 
 .header {
@@ -14,7 +19,7 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #a0aca1;
+    background-color: #2C061F;
 }
 
 .logo h1 {
@@ -54,8 +59,8 @@ h1, h2, h3 {
     padding: 15px;
     text-decoration: none;
     color: #000;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #D89216;
+    border: 1px solid #E1D89F;
     border-radius: 5px;
     height: 20px;
     font-size: 17px;
@@ -78,11 +83,10 @@ article {
 }
 
 /*külgriba*/
-
 aside {
     padding: 20px;
-    background-color: #f9f9f9; 
-    border: 1px solid #ccc; 
+    background-color: #2C061F; 
+    border: 1px solid #E1D89F; 
     border-radius: 5px; 
     margin: 20px 0; 
     min-height: 150px;
@@ -102,72 +106,78 @@ aside ul li {
     margin: 30px 0px;
 }
 
-
 /*gallery*/
 .gallery {
-    background-color: #a0aca1; /* Background color for the gallery */
-    padding: 30px; /* Padding around the gallery content */
-    border-radius: 15px; /* Rounded corners for the gallery container */
+    width: 100%;
+    background-color: #2C061F;
+    padding: 40px 10%;
+    border-radius: 15px;
+    margin: 40px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+    --primary-color: #D89216;
+    --secondary-color: #E1D89F;
+    --dark-bg: #2C061F;
 }
 
 .gallery h3 {
-    text-align: center; /* Center the heading */
-    margin-bottom: 5px; /* Space below the heading */
-    font-size: 25px; /* Increase font size for the heading */
-    color: #000000; /* Contrast color for better visibility */
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--primary-color);
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Smaller gap for more compact layout */
-    margin-top: 20px; /* Space above the grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .gallery-item {
-    display: flex;
-    align-items: center;
-    position: relative; /* For image overlay effects */
-    overflow: hidden; 
-    border-radius: 15px; 
-    transition: transform 0.3s; 
-    height: 300px; 
-    margin: 0;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05); 
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    height: 350px; 
 }
 
 .gallery-item img {
-    width: 150px; 
+    width: 100%;
     height: 100%; 
-    display: block; 
+    display: block;
     object-fit: cover; 
-    border-radius: 15px; 
-    margin-right: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s;
 }
 
-.gallery-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0; 
-    transition: opacity 0.3s; 
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 
-.gallery-item:hover::after {
-    opacity: 1;
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
 .gallery-text {
-    flex: 1; /* Laske tekstikastil võtta ülejäänud ruum */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: var(--dark-bg);
+    color: var(--secondary-color);
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    transition: opacity 0.3s;
+    opacity: 0;
 }
 
+.gallery-item:hover .gallery-text {
+    opacity: 1;
+}
 
 /*footer*/
 footer {
@@ -176,7 +186,7 @@ footer {
     justify-content: space-between; 
     align-items: center;
     padding: 20px;
-    background-color: #c2baba88;
+    background-color: #2C061F;
 }
 
 .social {
